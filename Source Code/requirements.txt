@@ -1,0 +1,11 @@
+transformers>=4.49.0
+accelerate
+bitsandbytes>=0.46.1
+peft
+qwen-vl-utils
+pillow
+opencv-python-headless
+datasets
+huggingface_hub
+tqdm
+torch
