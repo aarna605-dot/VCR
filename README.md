@@ -62,24 +62,30 @@ Fine-tuning on just **5.7% of available training data** (2,220 / 38,600 examples
 ## 5. Links
 
 - **Trained model weights (LoRA adapter):** [funezocode/lora-vcr-finetuned](https://huggingface.co/funezocode/lora-vcr-finetuned)
-- **Test set predictions:** [`test_predictions.json`](https://huggingface.co/funezocode/lora-vcr-finetuned/blob/main/test_predictions.json)
+- **Test set predictions:** [`predictions/test_predictions.json`](./predictions/test_predictions.json)
+    (also available on [Hugging Face](https://huggingface.co/funezocode/lora-vcr-finetuned/blob/main/test_predictions.json))
 - **Full report:** `report.docx` (in this repository)
 - **Kaggle notebook:** `notebook.ipynb` (in this repository)
 
 ## 6. Repository Structure
-repo/
-README.md - this file
-requirements.txt
-preprocess.py - dataset download, M3IT row parsing, image decoding
-score.py - score_candidates(), score_rationale()
-model_utils.py - base/fine-tuned model loading
-inference.py - single entry point: image+question -> (A*, R*)
-train_lora.py - QLoRA fine-tuning
-evaluate.py - held-out metric computation + test predictions
-notebook.ipynb - full Kaggle notebook (all cells + outputs)
-report.docx - project report
-predictions/
-test_predictions.json - 200-row test-set predictions
+
+```
+VCR/
+  README.md                        - this file
+  LICENSE
+  Kaggle Notebook.ipynb              - full Kaggle notebook (all cells + outputs)
+  VCR_Project_Report.docx             - project report
+  Source Code/
+    requirements.txt
+    preprocess.py                    - dataset download, M3IT row parsing, image decoding
+    score.py                         - score_candidates(), score_rationale()
+    model_utils.py                    - base/fine-tuned model loading
+    inference.py                      - single entry point: image+question -> (A*, R*)
+    train_lora.py                      - QLoRA fine-tuning
+    evaluate.py                        - held-out metric computation + test predictions
+  predictions/
+    test_predictions.json             - 200-row test-set predictions
+```
 
 ## 7. Setup & Reproduction
 
